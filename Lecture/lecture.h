@@ -10,6 +10,6 @@
 #include "../main.h"
 
 
-int Lecture_fichier (String fichier);
+int* Lecture_fichier (char CheminFichier[40]);
 
 #endif
