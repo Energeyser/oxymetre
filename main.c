@@ -14,13 +14,13 @@ int main()
     int bufferFIR[2][51] = {0};
     int rangBufferFIR = 0;
     float coeffFIR[51] = {0};
-    int i = 0;
+    int i, ligne = 0;
 
     LectureCoeffFIR(CheminCoeffFIR, coeffFIR);
 
-
-        Lecture_fichier(CheminValeurs, tab_non_filtre); //lecture du fichier de test et remplissage du tableau avec les valeurs brutes
-
+    while(1){
+        Lecture_fichier(CheminValeurs, tab_non_filtre, ligne); //lecture du fichier de test et remplissage du tableau avec les valeurs brutes
+        ligne ++;
 
         //affichage pour verification du passage des valeurs de la fonction lecture vers le main
         printf("\n----------\n Fonction Main : \n----------\n\n");
@@ -45,6 +45,6 @@ int main()
         printf("\n----------\n Fonction Main : \n----------\n\n");
         printf( "bufferFIR[0][0] (ACr FIR)  : %f\n", bufferFIR[0][0]);
         printf( "bufferFIR[1][0] (ACir FIR) : %f\n", bufferFIR[0][0]);
-
+    }
     return 0;
 }

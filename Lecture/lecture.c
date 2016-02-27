@@ -12,11 +12,11 @@
 // Cette fonction ouvre le fichier test et lit les donnees contenues a l'interieur
 // Retourne un tableau avec les valeurs ACr, DCr, ACir et DCir non filtrees
 
-void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4])
+void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4], int ligne)
 {
 
 	FILE *fichier = NULL;
-
+    char chaine[TAILLE_MAX] = "";
 
     //ouverture du fichier
     fichier = fopen(CheminValeurs, "r");
@@ -25,6 +25,7 @@ void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4])
     if (fichier != NULL)
     {
         //reccuperation des donnees et entree dans le tableau
+        fseek( fichier, 21*ligne, SEEK_SET );
         fscanf(fichier, "%d,%d,%d,%d", &tab_non_filtre[0], &tab_non_filtre[1], &tab_non_filtre[2], &tab_non_filtre[3]);
         //affichage pour verification
         //printf("\n----------\n Fonction Lecture_Fichier : \n----------\n\n");
