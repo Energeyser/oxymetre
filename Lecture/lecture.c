@@ -27,8 +27,8 @@ void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4])
         //reccuperation des donnees et entree dans le tableau
         fscanf(fichier, "%d,%d,%d,%d", &tab_non_filtre[0], &tab_non_filtre[1], &tab_non_filtre[2], &tab_non_filtre[3]);
         //affichage pour verification
-        printf("\n----------\n Fonction Lecture_Fichier : \n----------\n\n");
-        printf("ACr : %d, DCr : %d, ACir : %d, DCir : %d \n", tab_non_filtre[0], tab_non_filtre[1], tab_non_filtre[2], tab_non_filtre[3]);
+        //printf("\n----------\n Fonction Lecture_Fichier : \n----------\n\n");
+        //printf("ACr : %d, DCr : %d, ACir : %d, DCir : %d \n", tab_non_filtre[0], tab_non_filtre[1], tab_non_filtre[2], tab_non_filtre[3]);
 
 
         fclose(fichier); //fermeture du fichier
