@@ -9,6 +9,8 @@
 // Includes.
 #include "../main.h"
 
-void FIR (int ACr, int ACir, int bufferFIR[51]);
+
+
+void FIR (int ACr, int ACir, int bufferFIR[51], int rangBufferFIR, float coeffFIR[51]);
 
 #endif

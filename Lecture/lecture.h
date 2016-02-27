@@ -10,6 +10,7 @@
 #include "../main.h"
 
 
-void Lecture_fichier (char CheminFichier[40], int tab_non_filtre[4]);
+void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4]);
+void LectureCoeffFIR(char CheminCoeffFIR[40], float coeffFIR[51]);
 
 #endif

@@ -11,7 +11,7 @@
 // ne garder que le signal utiles (autour de 1Hz)
 // Ne retourne rien, mais modifie le buffer FIR
 
-void FIR (int ACr, int ACir, int bufferFIR[51])
+void FIR (int ACr, int ACir, int bufferFIR[51], int rangBufferFIR, float coeffFIR[51])
 {
 
 }
