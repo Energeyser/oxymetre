@@ -10,6 +10,6 @@
 #include "../main.h"
 
 
-int* Lecture_fichier (char CheminFichier[40]);
+void Lecture_fichier (char CheminFichier[40], int tab_non_filtre[4]);
 
 #endif
