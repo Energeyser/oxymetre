@@ -23,7 +23,9 @@ int* Lecture_fichier (char CheminFichier[40])
     //on verifie que l'on a bien ouvert le fichier
     if (fichier != NULL)
     {
+        //reccuperation des donnees et entree dans le tableau
         fscanf(fichier, "%d,%d,%d,%d", &tab_non_filtre[0], &tab_non_filtre[1], &tab_non_filtre[2], &tab_non_filtre[3]);
+        //affichage pour verification
         printf("ACr : %d, DCr : %d, ACir : %d, DCir : %d \n", tab_non_filtre[0], tab_non_filtre[1], tab_non_filtre[2], tab_non_filtre[3]);
 
 
@@ -31,6 +33,7 @@ int* Lecture_fichier (char CheminFichier[40])
     }
     else
     {
+        //si il y a impossibilité d'ouvrir le fichier, on le signale à l'utilisateur
         printf("Impossible d'ouvrir le fichier...\n");
     }
 
