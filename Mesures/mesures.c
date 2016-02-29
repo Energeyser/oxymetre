@@ -27,4 +27,7 @@ void Mesure(float tab_histo[5000], int DCr, int DCir, int* spo2, int* fcard)
         }
     rang++;
     }
+    periode=(finPeriode-debutPeriode);
+    fcard=1/(periode*120000);
+    printf("fcard: %d \n", &fcard);
 }
