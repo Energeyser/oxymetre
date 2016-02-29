@@ -25,9 +25,8 @@ int main()
 
     printf("lecture ok \n");
     while(ligne<5000){
-       // Lecture_fichier(CheminValeurs, tab_non_filtre, ligne); //lecture du fichier de test et remplissage du tableau avec les valeurs brutes
+        Lecture_fichier(CheminValeurs, tab_non_filtre, ligne); //lecture du fichier de test et remplissage du tableau avec les valeurs brutes
         ligne ++;
-        printf("while ok\n");
 
         //on recentre grossierement les valeurs AC autour de 0
         tab_non_filtre[0] -= 2048;
@@ -37,16 +36,18 @@ int main()
 
 
         IIR(tab_filtre_IIR, tab_filtre_FIR);
-       /* for(i=0;i<5000;i++){
+
+        for(i=0;i<5000;i++){
             if(i+1<5000){
                 tab_histo[0][i+1] = tab_histo[0][i];
                 tab_histo[1][i+1] = tab_histo[1][i];
             }
         }
-
+        //pb au niveau de tab_filtre_IIR qui est bon dans la fct IIR mais pas dans le main
+        printf("blbl : %d\n", tab_filtre_IIR[0]);
         tab_histo[0][0] = tab_filtre_IIR[0];
-        tab_histo[1][0] = tab_filtre_IIR[1];*/
-       // Mesure(tab_histo,tab_filtre_IIR[0], tab_filtre_IIR[0], &spo2, &fcard);
+        tab_histo[1][0] = tab_filtre_IIR[1];
+       Mesure(tab_histo,tab_filtre_IIR[0], tab_filtre_IIR[0], &spo2, &fcard);
     }
     return 0;
 }
