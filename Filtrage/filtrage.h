@@ -11,6 +11,8 @@
 
 
 
-void FIR (int ACr, int ACir, float bufferFIR[2][51], int rangBufferFIR, float coeffFIR[51]);
+int FIR (int ACr_non_filtre, int ACir_non_filtre, int bufferFIR[2][51], float coeffFIR[51], float tab_filtre_FIR[2][2]);
+void IIR (float tab_filtre_IIR[2], float tab_filtre_FIR[2][2]);
+
 
 #endif

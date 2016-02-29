@@ -16,7 +16,6 @@ void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4], int ligne)
 {
 
 	FILE *fichier = NULL;
-    char chaine[TAILLE_MAX] = "";
 
     //ouverture du fichier
     fichier = fopen(CheminValeurs, "r");
