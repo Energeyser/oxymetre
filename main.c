@@ -64,7 +64,7 @@ int main()
         }
         tab_histo[0][5000] = tab_filtre_IIR[0];
         tab_histo[1][5000] = tab_filtre_IIR[1];
-
+        Mesure(tab_histo[5000],tab_filtre_IIR[0], tab_filtre_IIR[0], *spo2, *fcard)
         printf( "ACr filtree IIR : %f\n",tab_filtre_IIR[0]);
         printf( "ACir filtree IIR : %f\n",tab_filtre_IIR[1]);
     }
