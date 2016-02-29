@@ -16,6 +16,7 @@ int main()
     int bufferFIR[2][51] = {0};
     float coeffFIR[51] = {0};
     int i, ligne = 0;
+    int tab_histo[2][5000] = {0};
 
     LectureCoeffFIR(CheminCoeffFIR, coeffFIR);
 
@@ -55,6 +56,15 @@ int main()
                }
 
         IIR(tab_filtre_IIR, tab_filtre_FIR);
+        for(i=0;i<5000;i++){
+            if(i+1<5000){
+                tab_histo[0][i+1] = tab_histo[0][i];
+                tab_histo[1][i+1] = tab_histo[1][i];
+            }
+        }
+        tab_histo[0][5000] = tab_filtre_IIR[0];
+        tab_histo[1][5000] = tab_filtre_IIR[1];
+
         printf( "ACr filtree IIR : %f\n",tab_filtre_IIR[0]);
         printf( "ACir filtree IIR : %f\n",tab_filtre_IIR[1]);
     }
