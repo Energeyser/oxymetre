@@ -39,5 +39,7 @@ int FIR (int ACr_non_filtre, int ACir_non_filtre, int bufferFIR[2][51], float co
 void IIR (float tab_filtre_IIR[2], float tab_filtre_FIR[2][2])
 {
     tab_filtre_IIR[0] = tab_filtre_FIR[0][0] - tab_filtre_FIR[1][0] + 0.992 * tab_filtre_IIR[0];
+    printf("tab filtre iir ACr : %f\n", tab_filtre_IIR[0]);
     tab_filtre_IIR[1] = tab_filtre_FIR[0][1] - tab_filtre_FIR[1][1] + 0.992 * tab_filtre_IIR[1];
+    printf("tab filtre iir ACir : %f\n", tab_filtre_IIR[1]);
 }

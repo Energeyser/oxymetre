@@ -5,6 +5,7 @@
 FILES=Affichage/affichage.c \
       Filtrage/filtrage.c \
       Lecture/lecture.c \
+      Mesures/mesures.c \
       main.c 
 
 #--- Nom de l'executable -----------------------------------------------------------

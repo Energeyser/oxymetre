@@ -37,6 +37,7 @@ void Lecture_fichier (char CheminValeurs[40], int tab_non_filtre[4], int ligne)
     {
         //si il y a impossibilité d'ouvrir le fichier, on le signale à l'utilisateur
         printf("Impossible d'ouvrir le fichier...\n");
+        fclose(fichier); //fermeture du fichier
     }
 }
 
@@ -67,5 +68,6 @@ void LectureCoeffFIR (char cheminCoeffFIR[40], float coeffFIR[51])
     {
         //si il y a impossibilité d'ouvrir le fichier, on le signale à l'utilisateur
         printf("Impossible d'ouvrir le fichier...\n");
+        fclose(fichier); //fermeture du fichier
     }
 }
