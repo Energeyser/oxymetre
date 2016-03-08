@@ -7,7 +7,10 @@
 
 int main()
 {
-
+    absorp myAbsorp;
+    oxy myOxy;
+    bool etat = 1;
+    int mem_fir[2][51];
 
     return 0;
 }
