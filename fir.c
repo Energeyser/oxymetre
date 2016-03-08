@@ -7,6 +7,5 @@
 
 struct absorp fir(struct absorp myAbsorp, int mem_fir[2][51])
 {
-
     return myAbsorp;
 }

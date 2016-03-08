@@ -14,10 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include <stdbool.h>
 
-//structure contenant les valeurs ACR, DCR, ACIR et DCIR
-typedef struct absorp absorp;
 struct absorp{
     float ACR;
     float DCR;
