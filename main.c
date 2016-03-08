@@ -11,6 +11,10 @@ int main()
     oxy myOxy;
     bool etat = 1;
     int mem_fir[2][51];
+    FILE* descr = NULL;
+
+    descr = initDescr();
+    //myAbsorp = fir(myAbsorp, mem_fir);
 
     return 0;
 }

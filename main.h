@@ -7,12 +7,16 @@
 #define MAIN_H
 // Includes.
 #include "fir.h"
+#include "initDescr.h"
+
+//bibliotheques
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <stdbool.h>
 
+//structure contenant les valeurs ACR, DCR, ACIR et DCIR
 typedef struct absorp absorp;
 struct absorp{
     float ACR;
@@ -21,6 +25,7 @@ struct absorp{
     float DCIR;
 };
 
+//structure contenant les valeurs du pouls et de SPO2
 typedef struct oxy oxy;
 struct oxy{
     int SpO2;

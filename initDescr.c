@@ -3,5 +3,10 @@
 // Date de creation: 27/02/2016
 // Role: ?
 
-//FILE* initDescr()
+#include "initDescr.h"
+#include <stdio.h>
 
+FILE* initDescr(){
+
+    return NULL;
+}
