@@ -9,25 +9,9 @@
 //-------------------------------------------------------------------------
 // Cette fonction elimine les composantes hautes frequences du signal fourni pour
 // ne garder que le signal utile (autour de 1Hz)
-// Ne retourne rien, mais modifie le buffer FIR
+// retourne une structure
 
-struct fir(absorp myAbsorp,int mem_fir[2][51])
+void fir(struct absorp myAbsorp,int mem_fir[2][51])
 {
-    myAbsorp.ACR;
-    myAbsorp.ACIR;
 
-    for(i=0;i<51;i++){
-        if(i-1>=0){
-            men_fir[0][i-1] =men_fir[0][i];
-            men_fir[1][i-1] = men_fir[1][i];
-        }
-    }
-    men_fir[0][50] = ACr_non_filtre;
-    men_fir[1][50] = ACir_non_filtre;
-
-    for(k=0;k<51;k++){
-        myAbsorp.ACR += coeffFIR[k] * men_fir[0][50-k];
-        myAbsorp.ACIR += coeffFIR[k] * men_fir[1][50-k];
-    }
-    return myAbsorp;
 }

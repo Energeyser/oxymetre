@@ -5,12 +5,15 @@
 
 #ifndef MAIN_H
 #define MAIN_H
-// Includes.
-#include "fir.h"
+// Includes
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdbool.h>
+#include "fir.h"
+
+
 
 struct absorp{
     float ACR;
@@ -19,6 +22,11 @@ struct absorp{
     float DCIR;
 };
 
+
+struct oxy{
+    int Spo2;
+    int pouls;
+};
 
 // Sources codes
 #endif
