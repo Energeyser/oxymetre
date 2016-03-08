@@ -7,7 +7,11 @@
 #define MAIN_H
 // Includes.
 #include "fir.h"
+#include "initFichier.h"
 #include "initDescr.h"
+#include "finDescr.h"
+#include "finFichier.h"
+
 
 //bibliotheques
 #include <stdio.h>

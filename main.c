@@ -16,5 +16,7 @@ int main()
     descr = initDescr();
     myAbsorp = fir(myAbsorp, mem_fir);
 
+    finDescr(descr);
+
     return 0;
 }
