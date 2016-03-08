@@ -10,8 +10,14 @@ int main()
     struct absorp myAbsorp;
     struct oxy myOxy;
     bool etat = 1;
-    int mem_fir[2][51];
+    int mem_fir;
+    struct absorp mem_iir;
     int coeffFIR[51];
-    fir(myAbsorp, mem_fir);
+    //iir(myAbsorp, mem_iir);
+    FILE* descr = NULL;
+
+    descr = initDescr();
+    myAbsorp = fir(myAbsorp, mem_fir);
+
     return 0;
 }
