@@ -2,10 +2,22 @@
 # Auteurs: Axel AUBRY - Pierre PICARD
 
 #--- Fichiers sources -------------------------------------------------------------
-FILES=Affichage/affichage.c \
-      Filtrage/filtrage.c \
-      Lecture/lecture.c \
-      Mesures/mesures.c \
+FILES=affichage.c \
+      calculPouls.c \
+      calculSpO2.c \
+      finDescr.c \
+      finFichier.c \
+      finMem.c \
+      finUSB.c \
+      fir.c \
+      iir.c \
+      initDescr.c \
+      initFichier.c \
+      initMem.c \
+      initUSB.c \
+      lecture.c \
+      lectureUSB.c \
+      mesure.c \
       main.c 
 
 #--- Nom de l'executable -----------------------------------------------------------
