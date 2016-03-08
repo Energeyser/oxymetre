@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <stdbool.h>
 
 struct absorp{
     float ACR;
@@ -23,7 +24,6 @@ struct absorp{
 };
 
 //structure contenant les valeurs du pouls et de SPO2
-typedef struct oxy oxy;
 struct oxy{
     int SpO2;
     int pouls;
