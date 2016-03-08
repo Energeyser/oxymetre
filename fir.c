@@ -4,16 +4,17 @@
 // Role: filtrage du signal (elimination des hautes fréquences)
 
 // Includes.
-#include "filtrage.h"
+#include "fir.h"
 
 //-------------------------------------------------------------------------
 // Cette fonction elimine les composantes hautes frequences du signal fourni pour
 // ne garder que le signal utile (autour de 1Hz)
 // Ne retourne rien, mais modifie le buffer FIR
 
-struct fir(myAbsorp, mem_fir){
-    myAbsorp.ACR
-    myAbsorp.ACIR
+struct fir(absorp myAbsorp,int mem_fir[2][51])
+{
+    myAbsorp.ACR;
+    myAbsorp.ACIR;
 
     for(i=0;i<51;i++){
         if(i-1>=0){
