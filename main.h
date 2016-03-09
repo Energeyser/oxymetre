@@ -8,8 +8,13 @@
 
 // Includes.
 #include "fir.h"
-#include "iir.h"
+#include "initFichier.h"
 #include "initDescr.h"
+#include "initMem.h"
+#include "finDescr.h"
+#include "finFichier.h"
+#include "finMem.h"
+
 
 //bibliotheques
 #include <stdio.h>
