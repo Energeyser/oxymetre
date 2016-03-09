@@ -5,6 +5,7 @@
 
 #ifndef MAIN_H
 #define MAIN_H
+
 // Includes.
 #include "fir.h"
 #include "initFichier.h"

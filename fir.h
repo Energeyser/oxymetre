@@ -4,6 +4,7 @@
 
 #ifndef FIR_H
 #define FIR_H
+
 // Includes.
 #include "main.h"
 

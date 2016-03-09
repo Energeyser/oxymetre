@@ -10,7 +10,7 @@ int main()
     struct absorp myAbsorp;
     struct oxy myOxy;
     bool etat = 1;
-    int mem_fir[2][51];
+    int** mem_fir;
     FILE* descr = NULL;
 
     descr = initDescr();
