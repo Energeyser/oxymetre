@@ -10,6 +10,7 @@
 #include "fir.h"
 #include "initFichier.h"
 #include "initDescr.h"
+#include "initMem.h"
 #include "finDescr.h"
 #include "finFichier.h"
 

@@ -13,7 +13,11 @@ int main()
     int** mem_fir;
     FILE* descr = NULL;
 
+
     descr = initDescr();
+    mem_fir = initMem(51,2);
+    mem_fir[1][1] = 1;
+    printf("mem_fir[2][2] = %d", mem_fir[1][1]);
     myAbsorp = fir(myAbsorp, mem_fir);
 
     finDescr(descr);

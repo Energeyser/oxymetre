@@ -8,7 +8,7 @@
 // Includes.
 #include "main.h"
 
-struct absorp fir(struct absorp myAbsorp, int mem_fir[2][51]);
+struct absorp fir(struct absorp myAbsorp, int** mem_fir);
 
 // Sources codes
 #endif

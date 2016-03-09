@@ -10,7 +10,7 @@
 // ne garder que le signal utile (autour de 1Hz)
 // retourne une structure
 
-struct absorp fir(struct absorp myAbsorp, int mem_fir[2][51])
+struct absorp fir(struct absorp myAbsorp, int** mem_fir)
 {
     /*int coeffFIR[51];
     int k,i = 0;
