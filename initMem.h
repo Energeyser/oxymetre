@@ -12,7 +12,3 @@ int** initMem(int x,int y);
 
 // Sources codes
 #endif
-
-
-
-

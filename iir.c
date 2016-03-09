@@ -10,16 +10,16 @@
 //
 // retourne une structure
 
-/*struct absorp iir(struct absorp myAbsorp, struct absorp* mem_iir)
+struct absorp iir(struct absorp myAbsorp, int** mem_iir)
 {
-    int valeurACR;
-    int valeurACIR;
-    valeurACR = *mem_iir.ACR;
-    *mem_iir.ACR = myAbsorp.ACR;
-    valeurACIR = mem_iir.ACIR;
-    mem_iir.ACIR = myAbsorp.ACIR;
-    myAbsorp.ACR = mem_iir.ACR - valeurACR + 0.992 * myAbsorp.ACR;
-    //printf("IIR : tab filtre iir ACr : %f\n", myAbsorp.ACR);
-    myAbsorp.ACIR = mem_iir.ACIR - valeurACIR + 0.992 * myAbsorp.ACIR;
+    mem_iir[0][1] = myAbsorp.ACR - mem_iir[0][0] + 0.992 * mem_iir[0][1];
+    mem_iir[1][1] = myAbsorp.ACIR - mem_iir[1][0] + 0.992 * mem_iir[1][1];
+
+    mem_iir[0][0] = myAbsorp.ACR;
+    mem_iir[1][0] = myAbsorp.ACIR;
+
+    myAbsorp.ACR = mem_iir[0][1];
+    myAbsorp.ACIR = mem_iir[1][1];
+
     return myAbsorp;
-}*/
+}

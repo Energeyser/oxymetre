@@ -14,7 +14,6 @@ int** initMem(int x,int y){
         printf("Erreur d'allocation de la memoire.\n");
         exit(-1);
     } else{
-        printf("ok c'est ok\n");
     }
 
     for(i=0 ; i < y ; i++){
@@ -28,6 +27,5 @@ int** initMem(int x,int y){
              exit(-2);
          }
     }
-    printf("ok c'est ok\n");
     return ptr;
 }

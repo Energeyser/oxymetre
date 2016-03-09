@@ -13,6 +13,7 @@
 #include "initMem.h"
 #include "finDescr.h"
 #include "finFichier.h"
+#include "finMem.h"
 
 
 //bibliotheques

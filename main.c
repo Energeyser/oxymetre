@@ -10,17 +10,19 @@ int main()
     struct absorp myAbsorp;
     struct oxy myOxy;
     bool etat = 1;
-    int** mem_fir;
+    int** mem_fir = NULL;
+    int** mem_iir = NULL;
     FILE* descr = NULL;
 
 
     descr = initDescr();
     mem_fir = initMem(51,2);
-    mem_fir[1][1] = 1;
-    printf("mem_fir[2][2] = %d", mem_fir[1][1]);
+    mem_iir = initMem(2,2);
     myAbsorp = fir(myAbsorp, mem_fir);
 
     finDescr(descr);
+    finMem(mem_iir, 2);
+    finMem(mem_fir, 2);
 
     return 0;
 }
