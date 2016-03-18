@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-int** initMem(int x,int y);
+float** initMem(int x,int y);
 
 // Sources codes
 #endif

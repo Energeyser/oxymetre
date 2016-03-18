@@ -6,6 +6,7 @@
 #include "define.h"
 #include "initMem.h"
 #include "fir.h"
+#include "iir.h"
 #include "lecture.h"
 #include "initFichier.h"
 
@@ -22,16 +23,26 @@ int main()
     myVal.maxACIR=0;
     myVal.maxDCIR=0;
     int etat = 1;
-    int** mem_fir = NULL;
-    int** mem_iir = NULL;
+    float** mem_fir = NULL;
+    float** mem_iir = NULL;
     FILE* descr = NULL;
+    int i;
 
     descr = initFichier();
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
+
+    for(i=0; i<5000; i++){
+
     myAbsorp = lecture(descr,&etat);
-    printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
+    //printf("Sortie lecture :\n");
+    //printf("ACR : %f, DCR : %f, ACIR : %f; DCIR : %f\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
     myAbsorp = fir(myAbsorp, mem_fir);
+    //printf("Sortie fir :\n");
+    //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+    myAbsorp = iir(myAbsorp, mem_iir);
+    printf("%d ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", i, (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+    }
 
     finDescr(descr);
     finMem(mem_iir, 2);

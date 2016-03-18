@@ -11,7 +11,7 @@
 
 
 
-absorp fir(absorp myAbsorp, int** mem_fir);
+absorp fir(absorp myAbsorp, float** mem_fir);
 
 // Sources codes
 #endif
