@@ -5,7 +5,7 @@
 #ifndef INITDESCR_H
 #define INITDESCR_H
 // Includes.
-#include "main.h"
+#include "define.h"
 #include <stdio.h>
 
 FILE* initDescr();

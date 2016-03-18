@@ -6,9 +6,9 @@
 #define IIR_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
-struct absorp iir(struct absorp myAbsorp, int** mem_iir);
+absorp iir(absorp myAbsorp, int** mem_iir);
 
 // Sources codes
 #endif

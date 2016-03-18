@@ -5,7 +5,7 @@
 #ifndef FINDESCR_H
 #define FINDESCR_H
 // Includes.
-#include "main.h"
+#include "define.h"
 #include <stdio.h>
 
 void finDescr(FILE* descr);

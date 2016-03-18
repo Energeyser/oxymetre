@@ -5,7 +5,7 @@
 #ifndef INITFICHIER_H
 #define INITFICHIER_H
 // Includes.
-#include "main.h"
+#include "define.h"
 #include <stdio.h>
 
 FILE* initFichier();

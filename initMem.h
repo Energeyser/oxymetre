@@ -6,7 +6,7 @@
 #define INIT_MEM_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
 int** initMem(int x,int y);
 

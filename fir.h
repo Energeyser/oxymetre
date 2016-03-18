@@ -6,9 +6,12 @@
 #define FIR_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
-struct absorp fir(struct absorp myAbsorp, int** mem_fir);
+
+
+
+absorp fir(absorp myAbsorp, int** mem_fir);
 
 // Sources codes
 #endif

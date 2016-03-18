@@ -3,21 +3,24 @@
 // Date de creation: 27/02/2016
 // Role: fonction principale du projet
 
-#include "main.h"
+#include "define.h"
+#include "initMem.h"
+#include "fir.h"
+#include "lecture.h"
 
 int main()
 {
-    struct absorp myAbsorp;
-    struct oxy myOxy;
-    bool etat = 1;
+    absorp myAbsorp;
+    oxy myOxy;
+    int etat = 1;
     int** mem_fir = NULL;
     int** mem_iir = NULL;
     FILE* descr = NULL;
 
-
-    descr = initDescr();
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
+    myAbsorp = lecture(descr,&etat);
+    printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
     myAbsorp = fir(myAbsorp, mem_fir);
 
     finDescr(descr);
@@ -26,3 +29,4 @@ int main()
 
     return 0;
 }
+
