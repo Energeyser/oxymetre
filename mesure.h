@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-absorp iir(absorp myAbsorp, int** mem_calcul, oxy myOxy);
+oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy, val myVal);
 
 
 // Sources codes

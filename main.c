@@ -9,6 +9,7 @@
 #include "iir.h"
 #include "lecture.h"
 #include "initFichier.h"
+#include "mesure.h"
 
 
 int main()
@@ -19,9 +20,9 @@ int main()
     myVal.passageZero=0;
     myVal.rang=0;
     myVal.maxACR=0;
-    myVal.maxDCR=0;
+    myVal.minACR=0;
     myVal.maxACIR=0;
-    myVal.maxDCIR=0;
+    myVal.minACIR=0;
     int etat = 1;
     float** mem_fir = NULL;
     float** mem_iir = NULL;
