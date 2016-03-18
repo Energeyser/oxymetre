@@ -12,6 +12,7 @@ oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy)
     int ptpACR;
     int ptpACIR;
     float RsIR;
+    float SpO2;
     if(passageZero<3){
         if(myAbsorp.ACR<0 && mem_calcul[0][1]>0){
             passageZero++;
@@ -21,7 +22,7 @@ oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy)
         }
         if(passageZero>0){
             rang++;
-            myOxy.SpO2=calculSpO2(periode, myOxy, maxACR, minACR, maxACIR, minACIR, myAbsorp);
+            calculSpO2(periode, myOxy, maxACR, minACR, maxACIR, minACIR, myAbsorp);
         }
     }
     else{
@@ -29,14 +30,14 @@ oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy)
         ptpACIR=maxACIR-minACIR;
         RsIR=(ptpACR/myAbsorp.DCR)/(ptpACIR/myAbsorp.DCIR);
         if(RsIR>0.4 && RsIR<1){
-            myOxy.SpO2=-25*RsIR+110;
+            SpO2=-25*RsIR+110;
         }
         else if(RsIR>1 && RsIR<3.4){
-            myOxy.SpO2=-33.3*RsIR+113;
+            SpO2=-33.3*RsIR+113;
         }
+        myOxy.SpO2= (int) SpO2;
         periode = rang*0.002;
         myOxy.pouls = calculPouls(periode, myOxy);
-        //myOxy.SpO2 = calculSpO2(periode, myOxy);
         rang=0;
         maxACR=0;
         minACR=0;
