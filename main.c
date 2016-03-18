@@ -7,6 +7,7 @@
 #include "initMem.h"
 #include "fir.h"
 #include "lecture.h"
+#include "initFichier.h"
 
 
 int main()
@@ -18,6 +19,7 @@ int main()
     int** mem_iir = NULL;
     FILE* descr = NULL;
 
+    descr = initFichier();
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
     myAbsorp = lecture(descr,&etat);
