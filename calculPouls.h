@@ -6,9 +6,9 @@
 #define CALCULPOULS_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
-int calculPouls (int periode, struct oxy myOxy);
+int calculPouls (int periode, oxy myOxy);
 
 // Sources codes
 #endif

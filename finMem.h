@@ -6,7 +6,7 @@
 #define FIN_MEM_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
 void finMem(int** tab, int x);
 

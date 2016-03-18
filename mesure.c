@@ -1,6 +1,6 @@
 #include "mesure.h"
 
-struct oxy mesure(struct absorp myAbsorp, int** mem_calcul, struct oxy myOxy)
+oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy)
 {
     int periode;
     int passageZero=0;

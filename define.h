@@ -3,17 +3,9 @@
 // Date de creation: 27/02/2016
 // Role: fonction principale du projet
 
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef DEFINE_H
+#define DEFINE_H
 
-// Includes.
-#include "fir.h"
-#include "initFichier.h"
-#include "initDescr.h"
-#include "initMem.h"
-#include "finDescr.h"
-#include "finFichier.h"
-#include "finMem.h"
 
 
 //bibliotheques
@@ -23,18 +15,21 @@
 #include <math.h>
 #include <stdbool.h>
 
-struct absorp{
+typedef struct {
+
     float ACR;
     float DCR;
     float ACIR;
     float DCIR;
-};
+} absorp;
 
 //structure contenant les valeurs du pouls et de SPO2
-struct oxy{
+
+typedef struct {
     int SpO2;
     int pouls;
-};
+} oxy;
+
 
 // Sources codes
 #endif

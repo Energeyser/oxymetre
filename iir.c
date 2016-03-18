@@ -5,9 +5,13 @@
 
 #include "iir.h"
 
-//----------------------------------------------------------------------
-struct absorp iir(struct absorp myAbsorp, int** mem_iir)
-{
+
+
+//
+//
+// retourne une structure
+
+absorp iir(absorp myAbsorp, int** mem_iir){
     mem_iir[0][1] = myAbsorp.ACR - mem_iir[0][0] + 0.992 * mem_iir[0][1];
     mem_iir[1][1] = myAbsorp.ACIR - mem_iir[1][0] + 0.992 * mem_iir[1][1];
 

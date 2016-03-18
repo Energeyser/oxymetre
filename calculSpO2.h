@@ -6,9 +6,9 @@
 #define CALCULSPO2_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
-int calculSpo2 (int periode, struct oxy myOxy);
+int calculSpo2 (int periode, oxy myOxy);
 
 // Sources codes
 #endif

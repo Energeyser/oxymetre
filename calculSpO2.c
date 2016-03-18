@@ -1,6 +1,6 @@
 #include "calculSpO2.h"
 
-int calculSpO2( int periode, struct oxy myOxy, int maxACR, int minACR, int maxACIR, int minACIR, struct absorp myAbsorp){
+int calculSpO2( int periode, oxy myOxy, int maxACR, int minACR, int maxACIR, int minACIR, absorp myAbsorp){
     if(myAbsorp.ACR>maxACR){
         maxACR = myAbsorp.ACR;
     }

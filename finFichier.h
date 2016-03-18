@@ -5,7 +5,7 @@
 #ifndef FINFICHIER_H
 #define FINFICHIER_H
 // Includes.
-#include "main.h"
+#include "define.h"
 #include <stdio.h>
 
 void finFichier(FILE* descr);

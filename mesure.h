@@ -6,9 +6,9 @@
 #define MESURE_H
 
 // Includes.
-#include "main.h"
+#include "define.h"
 
-struct absorp iir(struct absorp myAbsorp, int** mem_calcul, struct oxy myOxy);
+absorp iir(absorp myAbsorp, int** mem_calcul, oxy myOxy);
 
 
 // Sources codes
