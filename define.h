@@ -17,10 +17,10 @@
 
 typedef struct {
 
-    int ACR;
-    int DCR;
-    int ACIR;
-    int DCIR;
+    float ACR;
+    float DCR;
+    float ACIR;
+    float DCIR;
 } absorp;
 
 //structure contenant les valeurs du pouls et de SPO2

@@ -5,9 +5,9 @@
 
 #include "initMem.h"
 
-int** initMem(int x,int y){
-    int i = 0;
-    int **ptr=NULL;
+float** initMem(int x,int y){
+    int i,j;
+    float **ptr=NULL;
 
     ptr = malloc(y * sizeof(*ptr));       //On alloue y pointeurs.
     if(ptr == NULL){
@@ -26,6 +26,11 @@ int** initMem(int x,int y){
                 free(ptr);
              exit(-2);
          }
+    }
+    for(i=0; i<y; i++){
+        for(j=0; j<x; j++){
+            ptr[i][j] = 0;
+        }
     }
     return ptr;
 }

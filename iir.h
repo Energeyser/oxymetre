@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-absorp iir(absorp myAbsorp, int** mem_iir);
+absorp iir(absorp myAbsorp, float** mem_iir);
 
 // Sources codes
 #endif
