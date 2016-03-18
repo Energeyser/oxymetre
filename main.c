@@ -14,6 +14,13 @@ int main()
 {
     absorp myAbsorp;
     oxy myOxy;
+    val myVal;
+    myVal.passageZero=0;
+    myVal.rang=0;
+    myVal.maxACR=0;
+    myVal.maxDCR=0;
+    myVal.maxACIR=0;
+    myVal.maxDCIR=0;
     int etat = 1;
     int** mem_fir = NULL;
     int** mem_iir = NULL;

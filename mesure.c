@@ -1,28 +1,22 @@
 #include "mesure.h"
 
-oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy)
+oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy, val myVal)
 {
     int periode;
-    int passageZero=0;
-    int rang=0;
-    int maxACR=0;
-    int minACR=0;
-    int maxACIR=0;
-    int minACIR=0;
     int ptpACR;
     int ptpACIR;
     float RsIR;
     float SpO2;
     if(passageZero<3){
         if(myAbsorp.ACR<0 && mem_calcul[0][1]>0){
-            passageZero++;
+            myVal.passageZero++;
         }
         else if(myAbsorp.ACR>0 && mem_calcul[0][1]<0){
-            passageZero++;
+            myVal.passageZero++;
         }
         if(passageZero>0){
-            rang++;
-            calculSpO2(periode, myOxy, maxACR, minACR, maxACIR, minACIR, myAbsorp);
+            myVal.rang++;
+            calculSpO2(periode, myOxy, myVal, myAbsorp);
         }
     }
     else{
