@@ -30,14 +30,5 @@ typedef struct {
     int pouls;
 } oxy;
 
-typedef struct {
-    int rang;
-    int passageZero;
-    int maxACR;
-    int minACR;
-    int maxACIR;
-    int minACIR;
-} val;
-
 // Sources codes
 #endif
