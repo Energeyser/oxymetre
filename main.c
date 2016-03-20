@@ -26,6 +26,7 @@ int main()
     int etat = 1;
     float** mem_fir = NULL;
     float** mem_iir = NULL;
+    int mem_calcul[1][2]={0};
     FILE* descr = NULL;
     int i;
 
@@ -42,7 +43,9 @@ int main()
     //printf("Sortie fir :\n");
     //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
     myAbsorp = iir(myAbsorp, mem_iir);
-    printf("%d ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", i, (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+    //printf("%d ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", i, (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+    myOxy = mesure(myAbsorp, mem_calcul, myOxy, myVal)
+    //printf("SpO2: %d, pouls: %d\n",myOxy.SpO2, myOxy.pouls);
     }
 
     finDescr(descr);

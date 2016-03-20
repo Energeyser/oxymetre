@@ -38,6 +38,7 @@ oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy, val myVal)
         myVal.maxACIR=0;
         myVal.minACIR=0;
     }
+    printf("%d\n", myAbsorp.ACR);
     mem_calcul[0][1] = myAbsorp.ACR;
 
 }
