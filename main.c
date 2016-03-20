@@ -16,17 +16,19 @@ int main()
 {
     absorp myAbsorp;
     oxy myOxy;
-    val myVal;
-    myVal.passageZero=0;
-    myVal.rang=0;
-    myVal.maxACR=0;
-    myVal.minACR=0;
-    myVal.maxACIR=0;
-    myVal.minACIR=0;
+    myOxy.SpO2=0;
+    myOxy.pouls=0;
+    int passageZero=0;
+    int rang=0;
+    float maxACR=0;
+    float minACR=0;
+    float maxACIR=0;
+    float minACIR=0;
     int etat = 1;
     float** mem_fir = NULL;
     float** mem_iir = NULL;
-    int mem_calcul[1][2]={0};
+
+    float mem_calcul = 0;
     FILE* descr = NULL;
     int i;
 
@@ -44,8 +46,12 @@ int main()
     //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
     myAbsorp = iir(myAbsorp, mem_iir);
     //printf("%d ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", i, (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
-    myOxy = mesure(myAbsorp, mem_calcul, myOxy, myVal)
-    //printf("SpO2: %d, pouls: %d\n",myOxy.SpO2, myOxy.pouls);
+
+
+    myOxy = mesure(myAbsorp, &mem_calcul, myOxy, &passageZero, &rang, &maxACR, &minACR, &maxACIR, &minACIR);
+    //printf("SpO2 : %d , Pouls : %d \n", myOxy.SpO2, myOxy.pouls);
+       //printf("mem_calcul : %f\n", mem_calcul);
+        printf("passageZero: %d\n", passageZero);
     }
 
     finDescr(descr);

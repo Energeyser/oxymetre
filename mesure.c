@@ -1,27 +1,41 @@
 #include "mesure.h"
 
-oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy, val myVal)
+oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, int* rang,float* maxACR, float* minACR, float* maxACIR, float* minACIR)
 {
     int periode;
     int ptpACR;
     int ptpACIR;
+    int i = 10;
     float RsIR;
     float SpO2;
-    if(myVal.passageZero<3){
-        if(myAbsorp.ACR<0 && mem_calcul[0][1]>0){
-            myVal.passageZero++;
+
+    //printf("passageZero : %d\n", *passageZero);
+    printf("myAbsorp.ACR : %f\n", myAbsorp.ACR);
+    printf("mem_calcul : %f\n", *mem_calcul);
+
+
+    if(*pointeursurZero<3){
+
+        if(myAbsorp.ACR<0 && *mem_calcul>0){
+            *pointeursurZero = *pointeursurZero+1;
+
         }
-        else if(myAbsorp.ACR>0 && mem_calcul[0][1]<0){
-            myVal.passageZero++;
+        else if(myAbsorp.ACR>0 && *mem_calcul<0){
+            *pointeursurZero = *pointeursurZero+1;
+
         }
-        if(myVal.passageZero>0){
-            myVal.rang++;
-            calculSpO2(periode, myOxy, myVal, myAbsorp);
+
+        if(*pointeursurZero>0){
+
+            *rang = *rang + 1;
+            //calculSpO2(periode, myOxy, maxACR, minACR, maxACIR, minACIR, myAbsorp);
         }
+
+
     }
-    else{
-        ptpACR=myVal.maxACR-myVal.minACR;
-        ptpACIR=myVal.maxACIR-myVal.minACIR;
+    else{/*
+        ptpACR=*maxACR-*minACR;
+        ptpACIR=*maxACIR-*minACIR;
         RsIR=(ptpACR/myAbsorp.DCR)/(ptpACIR/myAbsorp.DCIR);
         if(RsIR>0.4 && RsIR<1){
             SpO2=-25*RsIR+110;
@@ -30,16 +44,24 @@ oxy mesure(absorp myAbsorp, int** mem_calcul, oxy myOxy, val myVal)
             SpO2=-33.3*RsIR+113;
         }
         myOxy.SpO2= (int) SpO2;
-        periode = myVal.rang*0.002;
-        myOxy.pouls = calculPouls(periode, myOxy);
-        myVal.rang=0;
-        myVal.maxACR=0;
-        myVal.minACR=0;
-        myVal.maxACIR=0;
-        myVal.minACIR=0;
+        periode = *rang*0.002;
+        myOxy.pouls = calculPouls(periode, myOxy);*/
+
+        *rang=0;
+        *maxACR=0;
+        *minACR=0;
+        *maxACIR=0;
+        *minACIR=0;
+        *pointeursurZero = 0;
     }
-    printf("%d\n", myAbsorp.ACR);
-    mem_calcul[0][1] = myAbsorp.ACR;
+
+    //printf("passageZero : %d\n", *pointeur);
+     //printf("myAbsorp.ACR : %f\n", myAbsorp.ACR);
+    *mem_calcul = myAbsorp.ACR;
+    //printf("mem_calcul : %f\n", *mem_calcul);
+    //printf("%f", mem_calcul);
+
+    return myOxy;
 
 }
 
