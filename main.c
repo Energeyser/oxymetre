@@ -27,16 +27,16 @@ int main()
     int etat = 1;
     float** mem_fir = NULL;
     float** mem_iir = NULL;
+    int i = 0;
 
     float mem_calcul = 0;
     FILE* descr = NULL;
-    int i;
 
     descr = initFichier();
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
 
-    for(i=0; i<5000; i++){
+   for(i = 0; i<5000; i++){
 
     myAbsorp = lecture(descr,&etat);
     //printf("Sortie lecture :\n");
@@ -45,13 +45,14 @@ int main()
     //printf("Sortie fir :\n");
     //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
     myAbsorp = iir(myAbsorp, mem_iir);
-    //printf("%d ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", i, (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
-
+    //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
 
     myOxy = mesure(myAbsorp, &mem_calcul, myOxy, &passageZero, &rang, &maxACR, &minACR, &maxACIR, &minACIR);
-    //printf("SpO2 : %d , Pouls : %d \n", myOxy.SpO2, myOxy.pouls);
+    printf("SpO2 : %d , Pouls : %d \n", myOxy.SpO2, myOxy.pouls);
        //printf("mem_calcul : %f\n", mem_calcul);
-        printf("passageZero: %d\n", passageZero);
+        //printf("passageZero: %d\n", passageZero);
+
+    affichage(myOxy);
     }
 
     finDescr(descr);

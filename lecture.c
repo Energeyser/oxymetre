@@ -22,8 +22,14 @@ absorp lecture(FILE* fichier, int* etat)
     c_ACIR[4] = '\0';
     c_DCIR[4] = '\0';
 
+    if(feof(fichier)){
+        *etat = EOF;
 
-    if(&etat != 0){
+    }
+
+    //printf("etat : %d\n", *etat);
+
+    if(*etat != EOF){
         for(i=0; i<4; i++){
                 c_ACR[i] = fgetc(fichier);
         }
@@ -49,13 +55,14 @@ absorp lecture(FILE* fichier, int* etat)
         fseek(fichier, 4, SEEK_CUR);
 
     }
-   // printf("c_ACR = %s\n", c_ACR);
-    //printf("myAbsorp.ACR = %f\n", myAbsorp.ACR);
+    //printf("c_ACR = %s\n", c_ACR);
     myAbsorp.ACR = atof(c_ACR) - 2048;
-   // printf("myAbsorp.ACR = %f\n", myAbsorp.ACR);
+    //printf("myAbsorp.ACR = %f\n", myAbsorp.ACR);
     myAbsorp.DCR = atof(c_DCR);
     myAbsorp.ACIR = atof(c_ACIR) - 2048;
     myAbsorp.DCIR = atof(c_DCIR);
+
+
 
     return myAbsorp;
 }

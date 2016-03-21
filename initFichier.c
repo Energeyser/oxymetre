@@ -10,7 +10,6 @@ FILE* initFichier(){
      if (descr == NULL)
         {
             printf("Erreur lors de l'ouverture du fichier\n");
-            exit(-3);
         }
     return descr;
 }

@@ -12,7 +12,6 @@ float** initMem(int x,int y){
     ptr = malloc(y * sizeof(*ptr));       //On alloue y pointeurs.
     if(ptr == NULL){
         printf("Erreur d'allocation de la memoire.\n");
-        exit(-1);
     } else{
     }
 
@@ -24,7 +23,6 @@ float** initMem(int x,int y){
                  free(ptr[i]);
              }            //On parcourt la boucle dans l'ordre inverse pour libérer ce qui a déjà été alloué
                 free(ptr);
-             exit(-2);
          }
     }
     for(i=0; i<y; i++){
