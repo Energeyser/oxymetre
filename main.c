@@ -36,7 +36,7 @@ int main()
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
 
-    for(i=0; i<5000; i++){
+    for(i=0; i<(5000; i++){
 
     myAbsorp = lecture(descr,&etat);
     //printf("Sortie lecture :\n");
