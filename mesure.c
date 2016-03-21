@@ -5,7 +5,6 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
     int periode;
     int ptpACR;
     int ptpACIR;
-    int i = 10;
     float RsIR;
     float SpO2;
 
@@ -18,20 +17,16 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
 
         if(myAbsorp.ACR<0 && *mem_calcul>0){
             *pointeursurZero = *pointeursurZero+1;
-
         }
         else if(myAbsorp.ACR>0 && *mem_calcul<0){
             *pointeursurZero = *pointeursurZero+1;
 
         }
-
         if(*pointeursurZero>0){
 
             *rang = *rang + 1;
             //calculSpO2(periode, myOxy, maxACR, minACR, maxACIR, minACIR, myAbsorp);
         }
-
-
     }
     else{/*
         ptpACR=*maxACR-*minACR;
@@ -47,22 +42,20 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
         periode = *rang*0.002;
         myOxy.pouls = calculPouls(periode, myOxy);*/
 
-        *rang=0;
+        *rang=1;
         *maxACR=0;
         *minACR=0;
         *maxACIR=0;
         *minACIR=0;
-        *pointeursurZero = 0;
+        *pointeursurZero = 1;
     }
-
+    printf("rang: %d\n",*rang);
     //printf("passageZero : %d\n", *pointeur);
      //printf("myAbsorp.ACR : %f\n", myAbsorp.ACR);
     *mem_calcul = myAbsorp.ACR;
     //printf("mem_calcul : %f\n", *mem_calcul);
     //printf("%f", mem_calcul);
-
     return myOxy;
-
 }
 
 
