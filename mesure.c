@@ -33,7 +33,7 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
 
 
     }
-    else{/*
+    else{
         ptpACR=*maxACR-*minACR;
         ptpACIR=*maxACIR-*minACIR;
         RsIR=(ptpACR/myAbsorp.DCR)/(ptpACIR/myAbsorp.DCIR);
@@ -45,7 +45,7 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
         }
         myOxy.SpO2= (int) SpO2;
         periode = *rang*0.002;
-        myOxy.pouls = calculPouls(periode, myOxy);*/
+        myOxy.pouls = calculPouls(periode, myOxy);
 
         *rang=0;
         *maxACR=0;
