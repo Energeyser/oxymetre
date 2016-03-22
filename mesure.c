@@ -33,6 +33,7 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
         }
         if(*pointeursurZero>0){
             *rang = *rang + 1;
+            printf("rang: %d\n", *rang);
         }
     }
     // si on vient de passer la periode, on fait les calculs de SpO2 et du pouls et on reinitialise les variables
@@ -66,7 +67,7 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
         *pointeursurZero = 1;
     }
     *mem_calcul = myAbsorp.ACR;
-
+    printf("SpO2 : %d , Pouls : %d \n", myOxy.SpO2, myOxy.pouls);
     return myOxy;
 }
 

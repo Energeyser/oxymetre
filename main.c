@@ -18,7 +18,7 @@ int main()
     oxy myOxy;
     myOxy.SpO2=0;
     myOxy.pouls=0;
-    int passageZero=0;
+    int passageZero=1;
     int rang=1;
     float maxACR=0;
     float minACR=0;
@@ -37,15 +37,6 @@ int main()
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
 
-        /* Initialisation simple */
-   /* if (SDL_Init(SDL_INIT_VIDEO) != 0 )
-    {
-        fprintf(stdout,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
-    }
-
-    {
-        // Création de la fenêtre
-    SDL_Window* pWindow = NULL;*/
 
    while(etat != EOF){
 
@@ -59,14 +50,15 @@ int main()
     //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
 
     myOxy = mesure(myAbsorp, &mem_calcul, myOxy, &passageZero, &rang, &maxACR, &minACR, &maxACIR, &minACIR);
-    printf("SpO2 : %d , Pouls : %d \n", myOxy.SpO2, myOxy.pouls);
+    printf("ACR: %f \n", myAbsorp.ACR);
+
        //printf("mem_calcul : %f\n", mem_calcul);
         //printf("passageZero: %d\n", passageZero);
+
 
     affichage(myOxy);
     }
 
-    //SDL_Quit();
     finDescr(descr);
     finMem(mem_iir, 2);
     finMem(mem_fir, 2);
