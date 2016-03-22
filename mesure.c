@@ -1,26 +1,26 @@
 #include "mesure.h"
 
-oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, int* rang,float* maxACR, float* minACR, float* maxACIR, float* minACIR)
+oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, int* rang,float tabMinMax[4])
 {
     float periode;
-    int ptpACR;
-    int ptpACIR;
+    float ptpACR;
+    float ptpACIR;
     float RsIR;
     float SpO2;
 
         // Mise en memoire des valeurs min et max pour calcul de la valeur ptp
 
-        if(myAbsorp.ACR>*maxACR){
-        *maxACR = myAbsorp.ACR;
+        if(myAbsorp.ACR>tabMinMax[0]){
+        tabMinMax[0] = myAbsorp.ACR;
         }
-        if(myAbsorp.ACR<*minACR){
-            *minACR = myAbsorp.ACR;
+        if(myAbsorp.ACR<tabMinMax[1]){
+            tabMinMax[1] = myAbsorp.ACR;
         }
-        if(myAbsorp.ACIR>*maxACIR){
-            *maxACIR = myAbsorp.ACIR;
+        if(myAbsorp.ACIR>tabMinMax[2]){
+            tabMinMax[2] = myAbsorp.ACIR;
         }
-        if(myAbsorp.ACIR<*minACIR){
-            *minACIR = myAbsorp.ACIR;
+        if(myAbsorp.ACIR<tabMinMax[3]){
+            tabMinMax[3] = myAbsorp.ACIR;
         }
 
     // test du passage par zero pour calculer la periode
@@ -39,8 +39,8 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
     // si on vient de passer la periode, on fait les calculs de SpO2 et du pouls et on reinitialise les variables
     else{
         // calcul des valeurs ptp
-        ptpACR=*maxACR-*minACR;
-        ptpACIR=*maxACIR-*minACIR;
+        ptpACR=tabMinMax[0]-tabMinMax[1];
+        ptpACIR=tabMinMax[2]-tabMinMax[3];
 
         // calcul du SpO2
         if(myAbsorp.DCR != 0 && myAbsorp.DCIR != 0){
@@ -60,10 +60,10 @@ oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, 
 
         // reinitialisation des variables
         *rang=1;
-        *maxACR=0;
-        *minACR=0;
-        *maxACIR=0;
-        *minACIR=0;
+        tabMinMax[0]=0;
+        tabMinMax[1]=0;
+        tabMinMax[2]=0;
+        tabMinMax[3]=0;
         *pointeursurZero = 1;
     }
     *mem_calcul = myAbsorp.ACR;

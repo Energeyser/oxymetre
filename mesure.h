@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, int* rang,float* maxACR, float* minACR, float* maxACIR, float* minACIR);
+oxy mesure(absorp myAbsorp, float* mem_calcul, oxy myOxy, int* pointeursurZero, int* rang,float tabMinMax[4]);
 
 
 // Sources codes

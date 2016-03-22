@@ -20,10 +20,7 @@ int main()
     myOxy.pouls=0;
     int passageZero=1;
     int rang=1;
-    float maxACR=0;
-    float minACR=0;
-    float maxACIR=0;
-    float minACIR=0;
+    float tabMinMax[4] = {0};
     int etat = 1;
     float** mem_fir = NULL;
     float** mem_iir = NULL;
@@ -32,31 +29,40 @@ int main()
 
     float mem_calcul = 0;
     FILE* descr = NULL;
+    FILE* pf = NULL;
 
     descr = initFichier();
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
 
+    while(etat != EOF){
 
-   while(etat != EOF){
+        myAbsorp = lecture(descr,&etat);
+        // printf("Sortie lecture :\n");
+        //printf("ACR : %f, DCR : %f, ACIR : %f; DCIR : %f\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
+        pf = fopen("my_record1_center.dat", "w");
+        fprintf(pf,"%f,%f,%f,%f%c%c", myAbsorp.ACR,myAbsorp.DCR,myAbsorp.ACIR,myAbsorp.DCIR,0x0A,0x0D);
+        fclose(pf);
+        myAbsorp = fir(myAbsorp, mem_fir);
+        pf = fopen("my_record1_fir.dat", "w");
+        fprintf(pf,"%f,%f,%f,%f%c%c", myAbsorp.ACR,myAbsorp.DCR,myAbsorp.ACIR,myAbsorp.DCIR,0x0A,0x0D);
+        fclose(pf);
+        //printf("Sortie fir :\n");
+        //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+        myAbsorp = iir(myAbsorp, mem_iir);
+        pf = fopen("my_record1_iir.dat", "w");
+        fprintf(pf,"%f,%f,%f,%f%c%c", myAbsorp.ACR,myAbsorp.DCR,myAbsorp.ACIR,myAbsorp.DCIR,0x0A,0x0D);
+        fclose(pf);
+        //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
 
-    myAbsorp = lecture(descr,&etat);
-   // printf("Sortie lecture :\n");
-    printf("ACR : %f, DCR : %f, ACIR : %f; DCIR : %f\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
-    myAbsorp = fir(myAbsorp, mem_fir);
-    //printf("Sortie fir :\n");
-    //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
-    myAbsorp = iir(myAbsorp, mem_iir);
-    //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
+        myOxy = mesure(myAbsorp, &mem_calcul, myOxy, &passageZero, &rang,tabMinMax);
+        printf("ACR: %f \n", myAbsorp.ACR);
 
-    myOxy = mesure(myAbsorp, &mem_calcul, myOxy, &passageZero, &rang, &maxACR, &minACR, &maxACIR, &minACIR);
-    printf("ACR: %f \n", myAbsorp.ACR);
-
-       //printf("mem_calcul : %f\n", mem_calcul);
+        //printf("mem_calcul : %f\n", mem_calcul);
         //printf("passageZero: %d\n", passageZero);
 
 
-    affichage(myOxy);
+        affichage(myOxy);
     }
 
     finDescr(descr);
