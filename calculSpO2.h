@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-void calculSpo2 (int periode, oxy myOxy);
+void calculSpo2 (float periode, oxy myOxy, float* maxACR, float* minACR, float* maxACIR, float* minACIR, absorp myAbsorp);
 
 // Sources codes
 #endif

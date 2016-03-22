@@ -1,8 +1,8 @@
 #include "calculPouls.h"
 
-int calculPouls (int periode, oxy myOxy){
+float calculPouls (float periode){
         float pouls;
         pouls = 1/(periode*60);
-        myOxy.pouls= (int) pouls;
-        return myOxy.pouls;
+    printf("pouls : %f\n", pouls);
+        return pouls;
         }

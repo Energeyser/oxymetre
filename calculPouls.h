@@ -8,7 +8,7 @@
 // Includes.
 #include "define.h"
 
-int calculPouls (int periode, oxy myOxy);
+float calculPouls (float periode);
 
 // Sources codes
 #endif
