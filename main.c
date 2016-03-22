@@ -19,7 +19,7 @@ int main()
     myOxy.SpO2=0;
     myOxy.pouls=0;
     int passageZero=0;
-    int rang=0;
+    int rang=1;
     float maxACR=0;
     float minACR=0;
     float maxACIR=0;
@@ -29,6 +29,7 @@ int main()
     float** mem_iir = NULL;
     int i = 0;
 
+
     float mem_calcul = 0;
     FILE* descr = NULL;
 
@@ -36,11 +37,21 @@ int main()
     mem_fir = initMem(51,2);
     mem_iir = initMem(2,2);
 
-   for(i = 0; i<5000; i++){
+        /* Initialisation simple */
+   /* if (SDL_Init(SDL_INIT_VIDEO) != 0 )
+    {
+        fprintf(stdout,"Échec de l'initialisation de la SDL (%s)\n",SDL_GetError());
+    }
+
+    {
+        // Création de la fenêtre
+    SDL_Window* pWindow = NULL;*/
+
+   while(etat != EOF){
 
     myAbsorp = lecture(descr,&etat);
-    //printf("Sortie lecture :\n");
-    //printf("ACR : %f, DCR : %f, ACIR : %f; DCIR : %f\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
+   // printf("Sortie lecture :\n");
+    printf("ACR : %f, DCR : %f, ACIR : %f; DCIR : %f\n", myAbsorp.ACR, myAbsorp.DCR, myAbsorp.ACIR, myAbsorp.DCIR);
     myAbsorp = fir(myAbsorp, mem_fir);
     //printf("Sortie fir :\n");
     //printf("ACR : %d, DCR : %d, ACIR : %d; DCIR : %d\n", (int) myAbsorp.ACR, (int) myAbsorp.DCR, (int) myAbsorp.ACIR, (int) myAbsorp.DCIR);
@@ -55,9 +66,11 @@ int main()
     affichage(myOxy);
     }
 
+    //SDL_Quit();
     finDescr(descr);
     finMem(mem_iir, 2);
     finMem(mem_fir, 2);
+
 
     return 0;
 }

@@ -7,6 +7,7 @@
 
 // Includes.
 #include "define.h"
+#include <SDL.h>
 
 void affichage(oxy myOxy);
 

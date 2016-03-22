@@ -25,7 +25,7 @@ EXECUTABLE=oxymetre
 
 #--- Building ------------------------------------------------------------------
 $(EXECUTABLE):$(FILES)
-	gcc $^ -o $@
+	gcc $^ -o $@ -lmingw32 -lSDL2main -lSDL2
 
 #--- Cleaning ------------------------------------------------------------------
 clean:
